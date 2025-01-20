@@ -32,4 +32,13 @@ public class NotificationService {
                 .append("Техническая поддержка ООО \"Биг-Бен\"");
         javaMailSender.send(getSimpleMessage(message.toString(),"Уведомление",mail));
     }
+    public void notifyEdit(UserRequestDto user, String date){
+        String[] mail = {user.userMail()};
+        StringBuilder message = new StringBuilder();
+        message.append("Уважаемый(ая) ").append(user.userName()).append("!").append(System.lineSeparator())
+                .append("Ваша бронь перенесена на ").append(System.lineSeparator())
+                .append(date).append(System.lineSeparator())
+                .append("Техническая поддержка ООО \"Биг-Бен\"");
+        javaMailSender.send(getSimpleMessage(message.toString(),"Уведомление",mail));
+    }
 }
