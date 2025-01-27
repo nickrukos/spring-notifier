@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class NotificationService {
     private final JavaMailSender javaMailSender;
-    @Value("${app.from}")
-    private final String appFrom; //= "ООО Биг";
+    //@Value("${app.from}")
+    private final String appFrom = "ООО Биг";
     private SimpleMailMessage getSimpleMessage(String message, String subject, String[] setTo){
         SimpleMailMessage mailMessage = new SimpleMailMessage();
 
