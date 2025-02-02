@@ -4,10 +4,9 @@ import feign.Response;
 import feign.codec.ErrorDecoder;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Component
-public class FeignErrorDecoder implements ErrorDecoder {
+public class BookingErrorDecoder implements ErrorDecoder {
     private final ErrorDecoder defaultErrorDecoder = new Default();
     @Override
     public Exception decode(String methodKey, Response response) {

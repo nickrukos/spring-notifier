@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(value = "services", url = "http://localhost:8080/api/booking/lastday")
+@FeignClient(value = "booking", url = "http://localhost:8080/api/booking/lastday")
 public interface BookingClient {
     @GetMapping(path = "/lastday")
     ResponseEntity<List <BookingStatResponseDTO>> GetLastDayServices();
